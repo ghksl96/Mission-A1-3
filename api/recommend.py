@@ -13,7 +13,7 @@ KAKAO_API_KEY = os.getenv("KAKAO_API_KEY")
 # 🤖 Gemini에게 여행지 추천받기 (A1이랑 거의 똑같아!)
 def get_travel_recommendations(travel_date):
     genai.configure(api_key=GEMINI_API_KEY)
-    model = genai.GenerativeModel("gemini-1.5-flash")  # ⭐ 모델 이름 수정!
+    model = genai.GenerativeModel("gemini-3.8-flash")  # ⭐ 모델 이름 수정!
 
     prompt = f"""
     너는 여행 전문가야. {travel_date}에 여행하기 좋은 국내 여행지 3곳을 추천해줘.
