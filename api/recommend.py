@@ -65,6 +65,7 @@ class handler(BaseHTTPRequestHandler):
 
         # 2. A1 함수들 그대로 활용!
         raw_result = get_travel_recommendations(travel_date)
+        print("Gemini 원본 답변:", raw_result)  # 👈 추가!
         recommendations = parse_recommendations(raw_result)
 
         # 3. 각 도시마다 맛집 정보 추가하기
