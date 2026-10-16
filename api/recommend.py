@@ -40,13 +40,17 @@ def parse_recommendations(raw_text):
     return data["recommendations"]
 
 
-# 🍜 카카오맵에서 맛집 검색 (A1이랑 똑같아!)
+# 🍜 카카오맵에서 맛집 검색
 def search_restaurants(city):
     url = "https://dapi.kakao.com/v2/local/search/keyword.json"
     headers = {"Authorization": f"KakaoAK {KAKAO_API_KEY}"}
     params = {"query": f"{city} 맛집", "size": 5}
     response = requests.get(url, headers=headers, params=params)
     data = response.json()
+    
+    print("상태코드:", response.status_code)  # 👈 ① 이 줄 추가!
+    print("카카오 응답:", data)              # 👈 ② 이 줄 추가!
+    
     return data["documents"]
 
 
