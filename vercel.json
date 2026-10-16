@@ -1,5 +1,10 @@
 {
-  "rewrites": [
-    { "source": "/", "destination": "/index.html" }
+  "builds": [
+    { "src": "index.html", "use": "@vercel/static" },
+    { "src": "api/recommend.py", "use": "@vercel/python" }
+  ],
+  "routes": [
+    { "src": "/api/recommend", "dest": "api/recommend.py" },
+    { "src": "/(.*)", "dest": "/$1" }
   ]
 }
