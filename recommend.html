@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>맛집 추천받기</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- 상단 네비게이션 (index와 동일) -->
+    <header>
+        <nav>
+            <div class="logo">🍽️ 맛집여행</div>
+            <ul class="nav-menu">
+                <li><a href="index.html">홈</a></li>
+                <li><a href="recommend.html">추천받기</a></li>
+                <li><a href="about.html">소개</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- 메인: 입력 폼 영역 -->
+    <main class="recommend-main">
+        <h1>어디로 떠나시나요? 🧳</h1>
+        <p class="subtitle">지역을 입력하면 AI가 맛집을 추천해드려요!</p>
+
+        <!-- 입력 폼 -->
+        <div class="input-box">
+            <!-- 지역 입력칸 -->
+            <input type="text" id="region" placeholder="예: 부산, 강릉, 전주...">
+            <!-- 추천 버튼 -->
+            <button id="searchBtn" class="btn">맛집 찾기 🔍</button>
+
+        </div>
+
+        <!-- 결과가 표시될 영역 (처음엔 비어있음) -->
+        <div id="result" class="result-box">
+            <!-- 여기에 자바스크립트로 맛집 카드가 채워질 예정! -->
+        </div>
+    </main>
+
+    <!-- 자바스크립트 연결 (body 맨 아래에 두는 게 좋아) -->
+    <script src="js/main.js"></script>
+
+</body>
+</html>
