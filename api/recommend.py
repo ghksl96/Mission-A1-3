@@ -13,7 +13,7 @@ KAKAO_API_KEY = os.getenv("KAKAO_API_KEY")
 # 🤖 Gemini에게 여행지 추천받기 (A1이랑 거의 똑같아!)
 def get_travel_recommendations(travel_date):
     genai.configure(api_key=GEMINI_API_KEY)
-    model = genai.GenerativeModel("gemini-1.5-flash")  # ⭐ 모델 이름 수정!
+    model = genai.GenerativeModel("gemini-flash-latest")  # ⭐ 모델 이름 수정!
 
     prompt = f"""
     너는 여행 전문가야. {travel_date}에 여행하기 좋은 국내 여행지 3곳을 추천해줘.
@@ -40,13 +40,17 @@ def parse_recommendations(raw_text):
     return data["recommendations"]
 
 
-# 🍜 카카오맵에서 맛집 검색 (A1이랑 똑같아!)
+# 🍜 카카오맵에서 맛집 검색
 def search_restaurants(city):
     url = "https://dapi.kakao.com/v2/local/search/keyword.json"
     headers = {"Authorization": f"KakaoAK {KAKAO_API_KEY}"}
     params = {"query": f"{city} 맛집", "size": 5}
     response = requests.get(url, headers=headers, params=params)
     data = response.json()
+    
+    print("상태코드:", response.status_code)  # 👈 ① 이 줄 추가!
+    print("카카오 응답:", data)              # 👈 ② 이 줄 추가!
+    
     return data["documents"]
 
 
@@ -61,6 +65,7 @@ class handler(BaseHTTPRequestHandler):
 
         # 2. A1 함수들 그대로 활용!
         raw_result = get_travel_recommendations(travel_date)
+        print("Gemini 원본 답변:", raw_result)  # 👈 추가!
         recommendations = parse_recommendations(raw_result)
 
         # 3. 각 도시마다 맛집 정보 추가하기
