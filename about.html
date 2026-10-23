@@ -1,26 +1,188 @@
-<section class="about-section">
-  <h1>🍽️ 여행 맛집 추천</h1>
-  <p class="intro">여행지에서 진짜 맛집을 못 찾아 헤맨 적 있나요?<br>
-     AI가 당신에게 딱 맞는 맛집을 추천해드립니다!</p>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>소개 | 여행 맛집 추천</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
-  <h2>💡 이런 서비스예요</h2>
-  <p>원하는 지역과 음식 종류를 입력하면,
-     AI가 분석해서 맛집을 추천해주는 서비스입니다.</p>
+    body {
+      font-family: 'Segoe UI', 'Malgun Gothic', sans-serif;
+      color: #333;
+      line-height: 1.6;
+      background: #fafafa;
+    }
 
-  <h2>🎯 이런 분께 추천해요</h2>
-  <ul>
-    <li>여행지에서 맛집 고르기 어려운 분</li>
-    <li>새로운 맛집을 찾고 싶은 30대</li>
-    <li>검색하기 귀찮은 분 😊</li>
-  </ul>
+    /* ===== 상단 Hero 영역 (그라데이션 배경) ===== */
+    .hero {
+      background: linear-gradient(135deg, #ff6b6b 0%, #ffa94d 100%);
+      color: #fff;
+      text-align: center;
+      padding: 80px 20px;
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+    }
+    .hero p {
+      font-size: 1.1rem;
+      opacity: 0.95;
+    }
 
-  <h2>⚙️ 사용 기술</h2>
-  <ul>
-    <li>Gemini AI (맛집 추천)</li>
-    <li>Kakao API (지역 정보)</li>
-    <li>Vercel (배포)</li>
-  </ul>
+    /* ===== 콘텐츠 영역 ===== */
+    .container {
+      max-width: 900px;
+      margin: -40px auto 0;
+      padding: 0 20px 60px;
+    }
 
-  <h2>👤 만든 사람</h2>
-  <p>[너의 이름 / 닉네임]</p>
-</section>
+    /* ===== 카드 공통 ===== */
+    .card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 35px;
+      margin-bottom: 25px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    }
+    .card h2 {
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+      color: #ff6b6b;
+    }
+
+    /* ===== 기능 소개 (3개 박스) ===== */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      margin-bottom: 25px;
+    }
+    .feature-box {
+      background: #fff;
+      border-radius: 16px;
+      padding: 30px 20px;
+      text-align: center;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+      transition: transform 0.2s;
+    }
+    .feature-box:hover {
+      transform: translateY(-6px);
+    }
+    .feature-box .icon {
+      font-size: 2.5rem;
+      margin-bottom: 12px;
+    }
+    .feature-box h3 {
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+      color: #333;
+    }
+    .feature-box p {
+      font-size: 0.9rem;
+      color: #777;
+    }
+
+    /* ===== 사용 방법 (단계) ===== */
+    .steps li {
+      list-style: none;
+      padding: 12px 0;
+      border-bottom: 1px dashed #eee;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    .steps li:last-child { border-bottom: none; }
+    .step-num {
+      background: #ff6b6b;
+      color: #fff;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      flex-shrink: 0;
+    }
+
+    /* ===== 버튼 ===== */
+    .cta {
+      text-align: center;
+      margin-top: 30px;
+    }
+    .cta a {
+      display: inline-block;
+      background: linear-gradient(135deg, #ff6b6b 0%, #ffa94d 100%);
+      color: #fff;
+      text-decoration: none;
+      padding: 15px 40px;
+      border-radius: 50px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      box-shadow: 0 6px 16px rgba(255,107,107,0.4);
+      transition: transform 0.2s;
+    }
+    .cta a:hover { transform: scale(1.05); }
+  </style>
+</head>
+<body>
+
+  <!-- 상단 Hero -->
+  <section class="hero">
+    <h1>🍽️ 여행 맛집 추천</h1>
+    <p>AI가 당신의 여행지에 딱 맞는 맛집을 찾아드려요!</p>
+  </section>
+
+  <div class="container">
+
+    <!-- 서비스 소개 카드 -->
+    <div class="card">
+      <h2>✨ 이런 서비스예요</h2>
+      <p>
+        여행지만 입력하면 <strong>AI(Gemini)</strong>와
+        <strong>카카오 지도</strong>가 협력해서
+        가장 맛있는 식당을 추천해드립니다.
+        더 이상 맛집 찾느라 고민하지 마세요!
+      </p>
+    </div>
+
+    <!-- 기능 3가지 -->
+    <div class="features">
+      <div class="feature-box">
+        <div class="icon">🤖</div>
+        <h3>AI 추천</h3>
+        <p>Gemini AI가 취향에 맞는 맛집을 똑똑하게 골라줘요</p>
+      </div>
+      <div class="feature-box">
+        <div class="icon">📍</div>
+        <h3>지도 연동</h3>
+        <p>카카오 지도로 위치와 정보를 한눈에 확인해요</p>
+      </div>
+      <div class="feature-box">
+        <div class="icon">⚡</div>
+        <h3>빠른 검색</h3>
+        <p>클릭 몇 번이면 바로 추천 결과를 받아볼 수 있어요</p>
+      </div>
+    </div>
+
+    <!-- 사용 방법 -->
+    <div class="card">
+      <h2>📝 사용 방법</h2>
+      <ul class="steps">
+        <li><span class="step-num">1</span> 가고 싶은 여행지를 입력하세요</li>
+        <li><span class="step-num">2</span> '추천받기' 버튼을 눌러주세요</li>
+        <li><span class="step-num">3</span> AI가 추천한 맛집 리스트를 확인하세요</li>
+        <li><span class="step-num">4</span> 마음에 드는 곳으로 떠나세요! ✈️</li>
+      </ul>
+    </div>
+
+    <!-- 버튼 -->
+    <div class="cta">
+      <a href="index.html">🚀 지금 맛집 추천받기</a>
+    </div>
+
+  </div>
+
+</body>
+</html>
