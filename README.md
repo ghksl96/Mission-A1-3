@@ -3,7 +3,7 @@
 > AI가 여행지에 딱 맞는 맛집을 추천해주는 웹 서비스입니다.
 > 가고 싶은 지역과 취향을 입력하면, AI가 분석해 실제 존재하는 맛집을 추천해 드립니다.
 
-🔗 **배포 URL (Live Demo)** : https://your-project.vercel.app)](https://mission-a1-3-82ghdcv96-codyssey11.vercel.app/
+🔗 **배포 URL (Live Demo)** :https://mission-a1-3-82ghdcv96-codyssey11.vercel.app/
 
 ---
 
