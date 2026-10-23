@@ -195,17 +195,17 @@ KAKAO_API_KEY=여기에_본인_Kakao_키_입력
 
 > 아래에 스크린샷 이미지를 첨부하세요. (`images/` 폴더에 저장 후 링크)
 
-- 🖥️ **데스크톱 화면** :<br>
+- 🖥️ **데스크톱 화면** : <br>
 
--  <img width="1287" height="632" alt="Screenshot_6" src="https://github.com/user-attachments/assets/025eab99-1c56-44e9-ace5-326f338399c7" /> <br>
+  <img width="1287" height="632" alt="Screenshot_6" src="https://github.com/user-attachments/assets/025eab99-1c56-44e9-ace5-326f338399c7" /> <br>
 
 - 📱 **모바일 화면** : <br>
 
--  <img width="1080" height="2116" alt="KakaoTalk_20261023_211840564" src="https://github.com/user-attachments/assets/0458d8d6-9dce-4681-aead-35158ae2a956" /> <br>
+   <img width="1080" height="2116" alt="KakaoTalk_20261023_211840564" src="https://github.com/user-attachments/assets/0458d8d6-9dce-4681-aead-35158ae2a956" /> <br>
 
 - 🤖 **AI 기능 동작 장면** :<br>
 
-- <img width="1204" height="795" alt="Screenshot_7" src="https://github.com/user-attachments/assets/7e53704e-0134-47b9-8b65-c1254aa3062f" />
+  <img width="1204" height="795" alt="Screenshot_7" src="https://github.com/user-attachments/assets/7e53704e-0134-47b9-8b65-c1254aa3062f" />
 
 <br>
 ---
